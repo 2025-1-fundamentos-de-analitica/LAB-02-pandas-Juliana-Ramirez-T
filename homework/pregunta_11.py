@@ -1,3 +1,4 @@
+import pandas as pd
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -7,6 +8,12 @@ librerias de pandas para resolver las preguntas.
 
 
 def pregunta_11():
+    archivo = pd.read_csv("files/input/tbl1.tsv", sep="\t")
+    archivo = archivo.groupby('c0')['c4'].apply(lambda x: ",".join(map(str, sorted(x)))).reset_index()
+    return archivo
+    
+
+
     """
     Construya una tabla que contenga `c0` y una lista separada por ',' de
     los valores de la columna `c4` del archivo `tbl1.tsv`.

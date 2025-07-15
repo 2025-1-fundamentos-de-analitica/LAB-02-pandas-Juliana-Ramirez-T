@@ -1,3 +1,4 @@
+import pandas as pd
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -7,6 +8,12 @@ librerias de pandas para resolver las preguntas.
 
 
 def pregunta_04():
+    archivo = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    #Promedio de c2 por cada letra de c1
+    archivo = archivo.groupby('c1')['c2'].mean()
+    return archivo.sort_index()
+
+
     """
     Calcule el promedio de `c2` por cada letra de la `c1` del archivo
     `tbl0.tsv`.

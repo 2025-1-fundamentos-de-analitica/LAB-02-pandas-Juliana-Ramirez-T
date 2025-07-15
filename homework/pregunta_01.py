@@ -1,3 +1,4 @@
+import pandas as pd
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -7,6 +8,12 @@ librerias de pandas para resolver las preguntas.
 
 
 def pregunta_01():
+    archivo = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    return len(archivo)
+    
+
+
+
     """
     ¿Cuál es la cantidad de filas en la tabla `tbl0.tsv`?
 
